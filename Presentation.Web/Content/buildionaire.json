@@ -1,0 +1,94 @@
+{
+  "buildionarie": {
+    "topbuilds": [
+      {
+        "id": 1,
+        "name": "Build Name One",
+        "info": "Build Info",
+        "dateBuild": "2015-02-19",
+        "buildcoins" :  1000
+      },
+      {
+        "id": 2,
+        "name": "Build Name Two",
+        "info": "Build Info",
+        "dateBuild": "2015-02-18",
+        "buildcoins" :  1000
+      },
+      {
+        "id": 3,
+        "name": "Build Name Three",
+        "info": "Build Info",
+        "dateBuild": "2015-02-17",
+        "buildcoins" :  1000
+      }
+    ],
+    "bottombuilds": [
+      {
+        "id": 12312,
+        "name": "Build Name Bottom One",
+        "info": "Build Info",
+        "dateBuild": "2015-02-19",
+        "buildcoins" :  1000
+      },
+      {
+        "id": 2123123,
+        "name": "Build Name Bottom Two",
+        "info": "Build Info",
+        "dateBuild": "2015-02-18",
+        "buildcoins" :  1000
+      },
+      {
+        "id": 31321312,
+        "name": "Build Name Bottom Three",
+        "info": "Build Info",
+        "dateBuild": "2015-02-17",
+        "buildcoins" :  1000
+      }
+    ],
+    "monthtop": [
+      {
+        "id": 1,
+        "name": "Build top month",
+        "status": ""
+      }
+    ],
+    "monthbottom": [
+      {
+        "id": 1,
+        "name": "Build bottom month",
+        "status": ""
+      }
+    ],
+    "randomdata" : [{
+        "dateSinceLastIncident" : "2015,1,20,10,19,23",
+        "totalCheckins" : "34566",
+        "topCheckins" : "Rui Felgueiras",
+        "buildcoins" : "235k",
+        "badgesEarned" : "23423",
+        "peopleInvolved" : "120",
+        "buildsMonitored" : "1212"
+      }
+    ],
+    "topcodereviewers": [
+      {
+        "id": 1,
+        "name": "Build Name",
+        "dateBuild": "2015-02-19",
+        "checkins" : "1231"
+      },
+      {
+        "id": 2,
+        "name": "Build Name",
+        "dateBuild": "2015-02-18",
+        "checkins" : "1231"
+      },
+      {
+        "id": 3,
+        "name": "Build Name",
+        "dateBuild": "2015-02-17",
+        "checkins" : "1231"
+      }
+    ]
+  }
+}

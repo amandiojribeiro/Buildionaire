@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Farfetch.Buildionaire.Domain.Model.CodeCoverage">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAIAgAAAgAAAAAAAAAAAgAAAAAAAAIABAAA=</HashCode>
+      <FileName>CodeCoverage.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Build" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Farfetch.Buildionaire.Domain.Model.Project">
+    <Position X="7.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKAAAAAAAAAAAAAAAAAAQAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Project.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Builds" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Farfetch.Buildionaire.Domain.Model.Warning">
+    <Position X="9" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Warning.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+      <Property Name="Build" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Farfetch.Buildionaire.Domain.Model.Build">
+    <Position X="9" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIAAEAAAAxQAAACAACAQAAAAAACAAAAQAAAAQAAA=</HashCode>
+      <FileName>Build.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+      <Property Name="Project" />
+      <Property Name="CodeCoverage" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Warnings" />
+      <Property Name="BuildScoreDetails" />
+      <Property Name="CodeReviews" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Farfetch.Buildionaire.Domain.Model.BuildScoreDetail">
+    <Position X="12" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAgAAAAAAAAAAAAAgAACAAAAAAAAAAA=</HashCode>
+      <FileName>BuildScoreDetail.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Build" />
+      <Property Name="Metric" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Farfetch.Buildionaire.Domain.Model.Metric">
+    <Position X="15" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAAgBQAAAAAgABAAACAAACAAAACAAAAAAAA=</HashCode>
+      <FileName>Metric.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="BuildScoreDetails" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Farfetch.Buildionaire.Domain.Model.CodeReview">
+    <Position X="4.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAACAAAAAAAAAAAAIAAQAAAAAAAAA=</HashCode>
+      <FileName>CodeReview.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RequestedBy" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Farfetch.Buildionaire.Domain.Model.User">
+    <Position X="1.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="CodeReviews" />
+      <Property Name="Badges" />
+      <Property Name="ChangeSets" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Farfetch.Buildionaire.Domain.Model.UserBadge">
+    <Position X="0.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserBadge.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Badge" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Farfetch.Buildionaire.Domain.Model.Badge">
+    <Position X="0.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAABAAAAAAEAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Badge.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BadgeType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Farfetch.Buildionaire.Domain.Model.ChangeSet">
+    <Position X="4.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAAAACAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ChangeSet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+      <Property Name="Project" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Farfetch.Buildionaire.Domain.Model.BadgeType">
+    <Position X="5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAIAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BadgeType.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Badges" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Enum Name="Farfetch.Buildionaire.Domain.Model.BuildStatus">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAABAAAAAAAIA=</HashCode>
+      <FileName>BuildStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Farfetch.Buildionaire.Domain.Model.WarningType">
+    <Position X="11.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAEAAAgAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>WarningType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Farfetch.Buildionaire.Domain.Model.CodeReviewInteractionType">
+    <Position X="1.5" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAgAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>CodeReviewInteractionType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Farfetch.Buildionaire.Domain.Model.CodeReviewType">
+    <Position X="2" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeReviewType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

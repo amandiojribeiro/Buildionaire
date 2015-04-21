@@ -1,0 +1,417 @@
+﻿@model string
+
+@{
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buildionaire - Dashboard</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="/Content/bootstrap.css" rel="stylesheet">
+    <link href="/Content/styles.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="/Scripts/html5shiv.js"></script>
+    <script src="/Scripts/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div class="col-sm-12 col-lg-12 main">
+        <div class="row">
+            <div class="col-lg-12">
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel panel-red">
+                    <div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-calendar"></span>No incidents in</div>
+                    <div class="panel-body panel-counting" id="countdown">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="col-xs-12 col-md-12 col-lg-12">
+                    <div class="panel panel-blue panel-widget ">
+                        <div class="row no-padding">
+                            <div class="col-sm-3 col-lg-4 widget-left">
+                                <em class="glyphicon glyphicon-th-list glyphicon-l"></em>
+                            </div>
+                            <div class="col-sm-9 col-lg-8 widget-right">
+                                <div class="large buildsMonitored"></div>
+                                <div class="text-muted">Builds Monitored</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-12 col-lg-12">
+                    <div class="panel panel-orange panel-widget">
+                        <div class="row no-padding">
+                            <div class="col-sm-3 col-lg-4 widget-left">
+                                <em class="glyphicon glyphicon-tags glyphicon-l"></em>
+                            </div>
+                            <div class="col-sm-9 col-lg-8 widget-right">
+                                <div class="large badgesEarned"></div>
+                                <div class="text-muted">Badges Earned</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="col-xs-12 col-md-12 col-lg-12">
+                    <div class="panel panel-teal panel-widget">
+                        <div class="row no-padding">
+                            <div class="col-sm-3 col-lg-4 widget-left">
+                                <em class="glyphicon glyphicon-user glyphicon-l"></em>
+                            </div>
+                            <div class="col-sm-9 col-lg-8 widget-right">
+                                <div class="large peopleInvolved"></div>
+                                <div class="text-muted">People Involved</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-12 col-lg-12">
+                    <div class="panel panel-red panel-widget">
+                        <div class="row no-padding">
+                            <div class="col-sm-3 col-lg-4 widget-left">
+                                <em class="glyphicon glyphicon-bitcoin glyphicon-l"></em>
+                            </div>
+                            <div class="col-sm-9 col-lg-8 widget-right">
+                                <div class="large buildcoins"></div>
+                                <div class="text-muted">Build Coins</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.row-->
+
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-blue">
+                    <div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-arrow-up"></span>Top 3 Builds</div>
+                    <div class="panel-body">
+                        <ul class="todo-list">
+                            <li class="todo-list-item infotopbuild1" data-toggle="popover">
+                                <div class="checkbox topbuild1" style="width:100%">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="topBuildHeader"></div>
+
+                                            <div class="col-md-6 dt"></div>
+                                        </div>
+                                        <div class="col-md-2 buildcoins"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="todo-list-item infotopbuild2">
+                                <div class="checkbox topbuild2" style="width:100%">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="topBuildHeader"></div>
+
+                                            <div class="col-md-6 dt"></div>
+                                        </div>
+                                        <div class="col-md-2 buildcoins"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="todo-list-item infotopbuild3">
+                                <div class="checkbox topbuild3" style="width:100%">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="topBuildHeader"></div>
+
+                                            <div class="col-md-6 dt"></div>
+                                        </div>
+                                        <div class="col-md-2 buildcoins"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel panel-red">
+                    <div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-arrow-down"></span>Bottom 3 Builds</div>
+                    <div class="panel-body">
+                        <ul class="todo-list">
+                            <li class="todo-list-item infobottombuild1">
+                                <div class="checkbox bottombuild1" style="width:100%">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="topBuildHeader"></div>
+
+                                            <div class="col-md-6 dt"></div>
+                                        </div>
+                                        <div class="col-md-2 buildcoins"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="todo-list-item infobottombuild2">
+                                <div class="checkbox bottombuild2" style="width:100%">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="topBuildHeader"></div>
+
+                                            <div class="col-md-6 dt"></div>
+                                        </div>
+                                        <div class="col-md-2 buildcoins"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="todo-list-item infobottombuild3">
+                                <div class="checkbox bottombuild3" style="width:100%">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="topBuildHeader"></div>
+
+                                            <div class="col-md-6 dt"></div>
+                                        </div>
+                                        <div class="col-md-2 buildcoins"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6">
+                <div class="panel panel-blue">
+                    <div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-arrow-up"></span>Top Build of the month</div>
+                    <div class="panel-body">
+                        <h2 class="monthtop color-white text-center"></h2>
+                        <h4 class="monthtopDate color-white text-center"></h4>
+                        <div class="text-center">
+                            <span class="glyphicon glyphicon-bitcoin glyphicon-l color-white"></span>
+                            <span class="scroreMonthTop scoreMonth mt15"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-red">
+                    <div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-arrow-down"></span>Bottom Build of the month</div>
+                    <div class="panel-body ">
+                        <h2 class="monthbottom color-white text-center"></h2>
+                        <h4 class="monthbottomDate color-white text-center"></h4>
+                        <div class="text-center">
+                            <span class="glyphicon glyphicon-bitcoin glyphicon-l color-white"></span>
+                            <span class="scroreMonthBottom scoreMonth mt15"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6" style="padding:0">
+                    <div class="panel panel-default">
+                        <div class="panel-body easypiechart-panel">
+                            <h4>Top Checkins</h4>
+                            <div class="easypiechart" id="easypiechart-blue" data-percent="100">
+                                <span class="percent topCheckins"></span>
+                                <span class="percent topCheckinsNumber mt25"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6" style="padding:0">
+                    <div class="panel panel-default">
+                        <div class="panel-body easypiechart-panel">
+                            <h4>Total Checkins</h4>
+                            <div class="easypiechart" id="easypiechart-red" data-percent="100">
+                                <span class="percent totalCheckins"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Average Checkins per hour</div>
+                    <div class="panel-body">
+                        <div class="canvas-wrapper">
+                            <canvas class="main-chart" id="bar-chart" height="200" width="600"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.row-->
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Monthly Scores</div>
+                    <div class="panel-body">
+                        <div class="canvas-wrapper">
+                            <canvas class="main-chart" id="bar-chart2" height="200" width="600"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.row-->
+        <div class="row">
+            <div class="col-md-6 col-lg-4 col-xs-12">
+                <h2><span class="glyphicon glyphicon-eye-open"></span> Top Code Reviewers</h2>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-xs-12 user userCodeReview1">
+                            <span class="col-xs-4">
+                                <img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle userCodeReview1Img" width="80">
+                            </span>
+                            <div class="col-xs-8">
+                                <div class="header">
+                                    <h4 class="primary-font userCodeReview1Name"></h4>
+                                    <h4 class="userCodeReview1Total"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 mt10 user userCodeReview2">
+                            <span class="col-xs-4">
+                                <img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar" class="img-circle userCodeReview2Img" width="80">
+                            </span>
+                            <div class="col-xs-8">
+                                <div class="header">
+                                    <h4 class="primary-font userCodeReview2Name"></h4>
+                                    <h4 class="userCodeReview2Total"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 mt10 user userCodeReview3">
+                            <span class="col-xs-4">
+                                <img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle userCodeReview3Img" width="80">
+                            </span>
+                            <div class="col-xs-8">
+                                <div class="header">
+                                    <h4 class="primary-font userCodeReview3Name"></h4>
+                                    <h4 class="userCodeReview3Total"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xs-12">
+                <h2><span class="glyphicon glyphicon-eye-open"></span> Code Reviewers of the Month</h2>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-xs-12 user userCodeReviewMonth1">
+                            <span class="col-xs-4">
+                                <img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle userCodeReviewMonth1Img" width="80">
+                            </span>
+                            <div class="col-xs-8">
+                                <div class="header">
+                                    <h4 class="primary-font userCodeReviewMonth1Name"></h4>
+                                    <h4 class="userCodeReviewMonth1Total"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 mt10 user userCodeReview2">
+                            <span class="col-xs-4">
+                                <img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar" class="img-circle userCodeReviewMonth2Img" width="80">
+                            </span>
+                            <div class="col-xs-8">
+                                <div class="header">
+                                    <h4 class="primary-font userCodeReviewMonth2Name"></h4>
+                                    <h4 class="userCodeReviewMonth2Total"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 mt10 user userCodeReview3">
+                            <span class="col-xs-4">
+                                <img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle userCodeReviewMonth3Img" width="80">
+                            </span>
+                            <div class="col-xs-8">
+                                <div class="header">
+                                    <h4 class="primary-font userCodeReviewMonth3Name"></h4>
+                                    <h4 class="userCodeReviewMonth3Total"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xs-12">
+                <h2><span class="glyphicon glyphicon-th"></span> Top Badges Owners</h2>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-xs-12 user userBadge1">
+                            <span class="col-xs-4">
+                                <img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar" class="img-circle userBadge1Img" width="80">
+                            </span>
+                            <div class="col-xs-8">
+                                <div class="header">
+                                    <h4 class="primary-font userBadge1Name"></h4>
+                                    <h4 class="userBadge1Total"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 user mt10 userBadge2">
+                            <span class="col-xs-4">
+                                <img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar" class="img-circle userBadge2Img" width="80">
+                            </span>
+                            <div class="col-xs-8">
+                                <div class="header">
+                                    <h4 class="primary-font userBadge2Name"></h4>
+                                    <h4 class="userBadge2Total"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 user mt10 userBadge3">
+                            <span class="col-xs-4">
+                                <img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar" class="img-circle userBadge3Img" width="80">
+                            </span>
+                            <div class="col-xs-8">
+                                <div class="header">
+                                    <h4 class="primary-font userBadge3Name"></h4>
+                                    <h4 class="userBadge3Total"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row usersBadgesContainer">
+
+        </div>
+
+    </div>	<!--/.main-->
+
+    <script src="/Scripts/jquery-1.11.2.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/chart.min.js"></script>
+    <script src="/Scripts/chart-data.js"></script>
+    <script src="/Scripts/easypiechart.js"></script>
+    <script src="/Scripts/easypiechart-data.js"></script>
+    <script src="/Scripts/count-up.js"></script>
+    <script src="~/Scripts/dashboard.js"></script>
+
+    <script>
+        initDashboard(@Html.Raw(Model));
+    </script>
+</body>
+
+</html>
