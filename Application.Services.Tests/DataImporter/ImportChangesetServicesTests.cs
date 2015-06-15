@@ -21,8 +21,10 @@
         {
             var changesetRepositoryMock = new Mock<IChangesetRepository>();
             var userRepositoryMock = new Mock<IUserRepository>();
-            var changesetGateway = new Mock<IChangesetGateway>();
-            var importChangesetServices = new ImportChangesetServices(changesetRepositoryMock.Object, userRepositoryMock.Object, changesetGateway.Object);
+            var changesetGatewayMock = new Mock<IChangesetGateway>();
+            var projectRepositoryMock = new Mock<IProjectRepository>();
+
+            var importChangesetServices = new ImportChangesetServices(changesetRepositoryMock.Object, userRepositoryMock.Object, changesetGatewayMock.Object, projectRepositoryMock.Object);
             importChangesetServices.ImportChangesets();
             changesetRepositoryMock.Verify(e => e.Add(It.IsAny<ChangeSet>()), Times.Never);
         }
@@ -33,11 +35,13 @@
             var changesetRepositoryMock = new Mock<IChangesetRepository>();
             var userRepositoryMock = new Mock<IUserRepository>();
             var changesetGateway = new Mock<IChangesetGateway>();
+            var projectRepositoryMock = new Mock<IProjectRepository>();
+
             changesetGateway.Setup(e => e.GetChangesets(It.IsAny<DateTime>()))
                 .Returns(new List<ChangeSet>() { new ChangeSet { ExternalChangesetId = 1 } });
             changesetRepositoryMock.Setup(e => e.Exists(It.IsAny<Expression<Func<ChangeSet, bool>>>()))
                 .Returns<Expression<Func<ChangeSet, bool>>>(x => x.Compile().Invoke(new ChangeSet { ExternalChangesetId = 1 }));
-            var importChangesetServices = new ImportChangesetServices(changesetRepositoryMock.Object, userRepositoryMock.Object, changesetGateway.Object);
+            var importChangesetServices = new ImportChangesetServices(changesetRepositoryMock.Object, userRepositoryMock.Object, changesetGateway.Object, projectRepositoryMock.Object);
             importChangesetServices.ImportChangesets();
             changesetRepositoryMock.Verify(e => e.Add(It.IsAny<ChangeSet>()), Times.Never);
         }
@@ -48,8 +52,9 @@
             var changesetRepositoryMock = new Mock<IChangesetRepository>();
             var userRepositoryMock = new Mock<IUserRepository>();
             var changesetGateway = new Mock<IChangesetGateway>();
+            var projectRepositoryMock = new Mock<IProjectRepository>();
 
-            var importChangesetServices = new ImportChangesetServices(changesetRepositoryMock.Object, userRepositoryMock.Object, changesetGateway.Object);
+            var importChangesetServices = new ImportChangesetServices(changesetRepositoryMock.Object, userRepositoryMock.Object, changesetGateway.Object, projectRepositoryMock.Object);
             importChangesetServices.ImportChangesets();
 
             changesetGateway.Verify(e => e.GetChangesets(It.Is<DateTime>(c => c == new DateTime(2014, 1, 1))), Times.Once);
@@ -61,10 +66,11 @@
             var changesetRepositoryMock = new Mock<IChangesetRepository>();
             var userRepositoryMock = new Mock<IUserRepository>();
             var changesetGateway = new Mock<IChangesetGateway>();
+            var projectRepositoryMock = new Mock<IProjectRepository>();
 
             changesetRepositoryMock.Setup(e => e.GetLast()).Returns(new ChangeSet { CreatedAt = new DateTime(2015, 2, 1) });
 
-            var importChangesetServices = new ImportChangesetServices(changesetRepositoryMock.Object, userRepositoryMock.Object, changesetGateway.Object);
+            var importChangesetServices = new ImportChangesetServices(changesetRepositoryMock.Object, userRepositoryMock.Object, changesetGateway.Object, projectRepositoryMock.Object);
             importChangesetServices.ImportChangesets();
 
             changesetGateway.Verify(e => e.GetChangesets(It.Is<DateTime>(c => c == new DateTime(2015, 2, 1))), Times.Once);
@@ -76,6 +82,7 @@
             var changesetRepositoryMock = new Mock<IChangesetRepository>();
             var userRepositoryMock = new Mock<IUserRepository>();
             var changesetGateway = new Mock<IChangesetGateway>();
+            var projectRepositoryMock = new Mock<IProjectRepository>();
 
             changesetGateway.Setup(e => e.GetChangesets(It.IsAny<DateTime>()))
                 .Returns(new List<ChangeSet>() { new ChangeSet { ExternalChangesetId = 2, User = new User { Name = "UserName" } } });
@@ -86,7 +93,7 @@
             userRepositoryMock.Setup(e => e.Find(It.Is<Expression<Func<User, bool>>>(x => x.Compile().Invoke(new User { Name = "UserName" })), null))
                 .Returns(new User { Name = "UserName" });
 
-            var importChangesetServices = new ImportChangesetServices(changesetRepositoryMock.Object, userRepositoryMock.Object, changesetGateway.Object);
+            var importChangesetServices = new ImportChangesetServices(changesetRepositoryMock.Object, userRepositoryMock.Object, changesetGateway.Object, projectRepositoryMock.Object);
             importChangesetServices.ImportChangesets();
             changesetRepositoryMock.Verify(e => e.Add(It.Is<ChangeSet>(c => c.User.Name == "UserName" && c.ExternalChangesetId == 2)), Times.Once);
         }
