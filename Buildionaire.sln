@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Layers", "1 - Layers", "{F4EE5914-8CF6-43B8-A0D7-6E58B7C5C047}"
 EndProject
@@ -52,61 +52,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6F01D8
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC09D6ED-CA99-484B-BBAB-4EACCA6787AC}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 13
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs:8080/tfs/research%20and%20development
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Domain.Model\\Domain.Model.csproj
-		SccProjectTopLevelParentUniqueName1 = Buildionaire.sln
-		SccProjectName1 = Domain.Model
-		SccLocalPath1 = Domain.Model
-		SccProjectUniqueName2 = Presentation.Web\\Presentation.Web.csproj
-		SccProjectTopLevelParentUniqueName2 = Buildionaire.sln
-		SccProjectName2 = Presentation.Web
-		SccLocalPath2 = Presentation.Web
-		SccProjectUniqueName3 = Application.Dto\\Application.Dto.csproj
-		SccProjectTopLevelParentUniqueName3 = Buildionaire.sln
-		SccProjectName3 = Application.Dto
-		SccLocalPath3 = Application.Dto
-		SccProjectUniqueName4 = Application.Services\\Application.Services.csproj
-		SccProjectTopLevelParentUniqueName4 = Buildionaire.sln
-		SccProjectName4 = Application.Services
-		SccLocalPath4 = Application.Services
-		SccProjectUniqueName5 = Domain.Core\\Domain.Core.csproj
-		SccProjectTopLevelParentUniqueName5 = Buildionaire.sln
-		SccProjectName5 = Domain.Core
-		SccLocalPath5 = Domain.Core
-		SccProjectUniqueName6 = Data.Repository\\Data.Repository.csproj
-		SccProjectTopLevelParentUniqueName6 = Buildionaire.sln
-		SccProjectName6 = Data.Repository
-		SccLocalPath6 = Data.Repository
-		SccProjectUniqueName7 = Data.Gateway\\Data.Gateway.csproj
-		SccProjectTopLevelParentUniqueName7 = Buildionaire.sln
-		SccProjectName7 = Data.Gateway
-		SccLocalPath7 = Data.Gateway
-		SccProjectUniqueName8 = Domain.Services\\Domain.Services.csproj
-		SccProjectTopLevelParentUniqueName8 = Buildionaire.sln
-		SccProjectName8 = Domain.Services
-		SccLocalPath8 = Domain.Services
-		SccProjectUniqueName9 = Infrastructure.CrossCutting\\Infrastructure.CrossCutting.csproj
-		SccProjectTopLevelParentUniqueName9 = Buildionaire.sln
-		SccProjectName9 = Infrastructure.CrossCutting
-		SccLocalPath9 = Infrastructure.CrossCutting
-		SccProjectUniqueName10 = Application.Services.Tests\\Application.Services.Tests.csproj
-		SccProjectTopLevelParentUniqueName10 = Buildionaire.sln
-		SccProjectName10 = Application.Services.Tests
-		SccLocalPath10 = Application.Services.Tests
-		SccProjectUniqueName11 = Domain.Services.Tests\\Domain.Services.Tests.csproj
-		SccProjectTopLevelParentUniqueName11 = Buildionaire.sln
-		SccProjectName11 = Domain.Services.Tests
-		SccLocalPath11 = Domain.Services.Tests
-		SccProjectUniqueName12 = Data.Repository.Tests\\Data.Repository.Tests.csproj
-		SccProjectTopLevelParentUniqueName12 = Buildionaire.sln
-		SccProjectName12 = Data.Repository.Tests
-		SccLocalPath12 = Data.Repository.Tests
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
