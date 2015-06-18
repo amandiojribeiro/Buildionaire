@@ -1,5 +1,5 @@
 # Buildionaire
-## OverView
+## Overview
 Buildionaire is a Gamification Platform where code quality matters. 
 Buildionaire monitors build servers, collects application builds metrics and scores each Build.
 
